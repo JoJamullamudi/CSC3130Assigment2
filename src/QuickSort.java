@@ -76,7 +76,26 @@ public class QuickSort implements SortingAlgorithm {
 
         return center;
     }
+/*
+    public static void main(String args[])
+    {
+        int[] input = {-5, 4, 2, 619, 11, 5, 620, -3};
 
+        QuickSort bs = new QuickSort();
+        bs.sorty(input);
+
+        System.out.print("[");
+        for (int i = 0; i < input.length; i++) {
+            System.out.print(input[i]);
+            if (i < input.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+
+    }
+
+ */
 
 
 }

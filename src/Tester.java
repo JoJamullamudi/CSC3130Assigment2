@@ -34,7 +34,7 @@ public class Tester {
         }
 
         double averagetime = totaltime / iterations;
-        System.out.println("Average time to sort an array of size " + size + ": " + averagetime);
+        System.out.println("Average time to sort an array of size " + size + ": " + averagetime + "ms");
     }
 /*
     public static void main(String args[]) {

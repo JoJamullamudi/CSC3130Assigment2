@@ -36,13 +36,15 @@ public class Tester {
         double averagetime = totaltime / iterations;
         System.out.println("Average time to sort an array of size " + size + ": " + averagetime);
     }
-
+/*
     public static void main(String args[]) {
         QuickSort bs = new QuickSort();
         Tester tester = new Tester(bs);
         tester.singleTest(10);
         tester.test(10, 10);
     }
+
+ */
 }
 
 

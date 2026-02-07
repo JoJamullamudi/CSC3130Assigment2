@@ -2,31 +2,63 @@ import java.util.Random;
 
 public class KSort {
 
-    public static void generateKSorted(int[] input)
-    {
-        Random r = new Random();
+    SortingAlgorithm sa;
 
-        for (int a = 0; a < input.length; a++) {
-            input[a] = r.nextInt(999);
-        }
-
-        int gap = 10;
-        int temp;
-        for ( int gap = input.length/2; gap > 0; gap /=2 )
-        {
-            for ( int a = gap; a < input.length; a++)
-            {
-                temp =  input[a];
-                int b;
-                for ( b = a; b >= gap && temp < input[b - gap]; b = b -gap )
-                {
-                    input[b] = input[b - gap];
-                }
-                input[b] = temp;
-            }
-        }
-
+    KSort(SortingAlgorithm sa){
+        this.sa = sa;
     }
 
+    public void generateKSorted(int[] input){
+        int temp = 0;
+        int minSwap;
+        int maxSwap;
+        int swapK;
+        Random rand = new Random();
+
+        for(int a = 0; a < input.length; a++){
+            input[a] = a;
+        }
+
+        int k = 10;
+
+        for(int a = 0; a < input.length; a++){
+            minSwap = Math.max(0, a-k);
+            maxSwap = Math.min(input.length-1, a+k);
+
+            swapK = minSwap + rand.nextInt(maxSwap - minSwap + 1);
+
+            temp = input[a];
+            input[a] = input[swapK];
+            input[swapK] = temp;
+        }
+    }
+
+    public double ksingleTest(int size){
+
+        int[] input = new int[size];
+
+        generateKSorted(input);
+
+        long startTime = System.nanoTime();
+        sa.sorty(input);
+        long endTime = System.nanoTime();
+
+        double tmillis = (endTime - startTime) / 1_000_000.0;
+
+        return tmillis;
+    }
+
+    public void test(int iterations, int size) {
+        double totaltime = 0.0;
+
+        for (int i = 0; i < iterations; i++) {
+            totaltime = totaltime + ksingleTest(size);
+        }
+
+        double averagetime = totaltime / iterations;
+        System.out.println("Average time to sort an array of size " + size + ": " + averagetime + "ms");
+    }
 
 }
+
+

@@ -1,4 +1,3 @@
-import static jdk.internal.vm.vector.VectorSupport.test;
 
 public class Performance {
 

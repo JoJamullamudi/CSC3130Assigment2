@@ -16,17 +16,17 @@ public class MergeSort implements SortingAlgorithm{
 
         for ( int a = 0; a< len; a++)
         {
-            if ( oneindex == one.length)
+            if ( oneindex == one.length) // if done with the first array then take second
             {
                 m[a] = two[twoindex];
                 twoindex++;
             }
-            else if ( twoindex == two.length)
+            else if ( twoindex == two.length) // visa versa
             {
                 m[a] = one[oneindex];
                 oneindex++;
             }
-            else if ( one[oneindex] <= two[twoindex])
+            else if ( one[oneindex] <= two[twoindex]) // compare numbers from both and take smaller one
             {
                 m[a] = one[oneindex];
                 oneindex++;
@@ -48,14 +48,14 @@ public class MergeSort implements SortingAlgorithm{
             return input;
         }
 
-        int[] one = new int[input.length/2];
+        int[] one = new int[input.length/2]; // split the array into to halves
         int[] two = new int[input.length- (input.length/2)];
 
         for( int a = 0; a< input.length/2; a++)
         {
             one[a] = input[a];
         }
-
+        //filling both halves
         for( int b = input.length/2; b< input.length; b++)
         {
             two[b-(input.length/2)] = input[b];

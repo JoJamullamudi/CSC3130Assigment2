@@ -15,13 +15,13 @@ public class KSort {
         int swapK;
         Random rand = new Random();
 
-        for(int a = 0; a < input.length; a++){
+        for(int a = 0; a < input.length; a++){ //Fill the array with sorted numbers
             input[a] = a;
         }
 
         int k = 10;
 
-        for(int a = 0; a < input.length; a++){
+        for(int a = 0; a < input.length; a++){ //For each element, swap it with another element within k range
             minSwap = Math.max(0, a-k);
             maxSwap = Math.min(input.length-1, a+k);
 
@@ -32,7 +32,7 @@ public class KSort {
             input[swapK] = temp;
         }
     }
-
+//Runs a single test on a  k sorted array
     public double ksingleTest(int size){
 
         int[] input = new int[size];
@@ -48,7 +48,7 @@ public class KSort {
         return tmillis;
     }
 
-    public void test(int iterations, int size) {
+    public void test(int iterations, int size) { // //Runs the test multiple times and prints the average
         double totaltime = 0.0;
 
         for (int i = 0; i < iterations; i++) {

@@ -35,17 +35,17 @@ public class QuickSort implements SortingAlgorithm {
 
         while ( i <= j) {
 
-            while ( i <= j && input[i] < pivot)
+            while ( i <= j && input[i] < pivot) //move i until we find something smaller than pivot
             {
                 i++;
             }
 
-            while ( i<=j && input[j] > pivot)
+            while ( i<=j && input[j] > pivot) // move j until something larger
             {
                 j--;
             }
 
-            if (i <= j )
+            if (i <= j ) // if pointers havent crossed swap numbers
             {
                 swap(input, i, j);
                 i++;
@@ -54,13 +54,14 @@ public class QuickSort implements SortingAlgorithm {
 
         }
 
-        swap(input, i, right);
+        swap(input, i, right); // if pointers cross move pivot
 
         return i;
     }
 
     public int medianofthree(int[] input, int left, int right)
     {
+        // Find the pivot point
         int center = (left + right) / 2;
 
         if (input[left] > input[center]) {

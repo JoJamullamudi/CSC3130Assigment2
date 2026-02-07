@@ -4,15 +4,15 @@ public class InsertionSort implements SortingAlgorithm{
 
         int temp;
         int b;
-        for (int a = 0; a < input.length; a++)
+        for (int a = 0; a < input.length; a++) // moves through the whole array
         {
-            b = a;
-            while (b > 0 && input[b] < input[b-1] )
+            b = a; // start at a to move backwards
+            while (b > 0 && input[b] < input[b-1] ) // if the current number is small then swap
             {
                 temp = input[b];
                 input[b] = input[b-1];
                 input[b-1] = temp;
-                b--;
+                b--; // to make sure we go until the number is in the right spot
             }
         }
 

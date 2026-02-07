@@ -8,7 +8,7 @@ public class Tester {
         this.sa = sa;
     }
 
-    public double singleTest(int size) {
+    public double singleTest(int size) { //Runs a single sort and returns how long it took in milliseconds
         int[] input = new int[size];
         Random r = new Random();
 
@@ -26,7 +26,7 @@ public class Tester {
 
     }
 
-    public void test(int iterations, int size) {
+    public void test(int iterations, int size) {//Runs the test multiple times and prints the average
         double totaltime = 0.0;
 
         for (int i = 0; i < iterations; i++) {

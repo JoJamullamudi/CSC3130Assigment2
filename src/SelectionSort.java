@@ -4,12 +4,12 @@ public class SelectionSort implements SortingAlgorithm{
 
         int temp;
         int smallindex;
-        for ( int a = 0; a < input.length-1; a++)
+        for ( int a = 0; a < input.length-1; a++) // moves through the array
         {
-            smallindex = a;
-            for ( int b = a+1; b < input.length; b++)
+            smallindex = a; // saves smallest index
+            for ( int b = a+1; b < input.length; b++) // looks through the array after a
             {
-                if ( input[b] < input[smallindex])
+                if ( input[b] < input[smallindex]) //if it finds a smaller number than current then it swaps
                 {
                     smallindex = b;
                 }

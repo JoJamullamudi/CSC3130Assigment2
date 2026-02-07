@@ -3,11 +3,11 @@ public class BubbleSort implements SortingAlgorithm{
     public int[] sorty(int[]input)
     {
         int temp;
-        for ( int a = 0; a < input.length -1; a++)
+        for ( int a = 0; a < input.length -1; a++)//goes through the whole array
         {
-            for ( int b = 0; b < input.length-a-1; b++ )
+            for ( int b = 0; b < input.length-a-1; b++ ) //-a makes sure we don recompare numbers.
             {
-                if ( input[b] > input[b+1])
+                if ( input[b] > input[b+1]) // checks if current is better than next if so then swap
                 {
                     temp = input[b];
                     input[b] = input[b+1];

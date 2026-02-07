@@ -3,13 +3,13 @@ public class ShellSort implements SortingAlgorithm {
     public int[] sorty(int[]input) {
 
         int temp;
-       for ( int gap = input.length/2; gap > 0; gap /=2 )
+       for ( int gap = input.length/2; gap > 0; gap /=2 ) // starts with a large gap the reduces
        {
            for ( int a = gap; a < input.length; a++)
            {
                temp =  input[a];
                int b;
-               for ( b = a; b >= gap && temp < input[b - gap]; b = b -gap )
+               for ( b = a; b >= gap && temp < input[b - gap]; b = b -gap ) //shifts elements in the same gap
                {
                    input[b] = input[b - gap];
                }

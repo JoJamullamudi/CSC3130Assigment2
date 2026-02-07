@@ -3,6 +3,7 @@ public class Performance {
 
     public static void main(String args[])
     {
+        // Initialize all sorting algorithms
         BubbleSort b = new BubbleSort();
         InsertionSort i = new InsertionSort();
         SelectionSort s = new SelectionSort();
@@ -10,7 +11,7 @@ public class Performance {
         QuickSort q = new QuickSort();
         MergeSort m = new MergeSort();
 
-
+        //testing all
         Tester SH = new Tester(sh);
         System.out.println("Shell Sort:");
         SH.test(20, 100);
